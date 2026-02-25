@@ -31,12 +31,12 @@ jobs:
       - name: 必要なパッケージをインストール
         run: |
           pip install --upgrade pip
-          pip install -r lambda_local_test_AMMK/hello_world/requirements.txt
+          pip install -r testProject/hello_world/requirements.txt
 
       - name: SAM ビルド
-        working-directory: lambda_local_test_AMMK
+        working-directory: testProjectK
         run: sam build
 
       - name: SAM デプロイ
-        working-directory: lambda_local_test_AMMK
+        working-directory: testProjectK
         run: sam deploy --no-confirm-changeset --stack-name test-project --capabilities CAPABILITY_IAM
