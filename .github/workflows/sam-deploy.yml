@@ -34,9 +34,9 @@ jobs:
           pip install -r testProject/hello_world/requirements.txt
 
       - name: SAM ビルド
-        working-directory: testProjectK
+        working-directory: testProject
         run: sam build
 
       - name: SAM デプロイ
-        working-directory: testProjectK
+        working-directory: testProject
         run: sam deploy --no-confirm-changeset --stack-name test-project --capabilities CAPABILITY_IAM
